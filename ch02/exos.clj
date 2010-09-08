@@ -1,4 +1,4 @@
-
+; ex 8
 (defn count-a [l]
     (if (empty? l)
         0
@@ -10,6 +10,7 @@
 (count-a '(a a a))
 (count-a '(oo ll ee))
 
+; ex 9
 (defn summit [l]
     (reduce (fn [acc x] (if x (+ acc x) acc))
         0
