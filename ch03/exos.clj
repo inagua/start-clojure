@@ -16,8 +16,9 @@
         (for [elt elts]
         [elt (count (filter #(= % elt) l))])))
  
-(defn occurences [l]        
+(defn occurences [l] 
+    (sort-by (fn [[v occ]] occ) >
     (for [elt (distinct l)]
-        [elt (count (filter #(= % elt) l))]))
+        [elt (count (filter #(= % elt) l))])))
                    
-(occurences [:a :b :a :a :d :c :c])
+(occurences [:a :b :a :a :d :c :c :c])
