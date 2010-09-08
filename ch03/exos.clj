@@ -1,5 +1,4 @@
 ; ex 2
-
 (defn stable-union [col1 col2]
     (if (empty? col2)
         col1        
@@ -11,3 +10,10 @@
 ; (distint (concat ...)) instead !
 
 (stable-union '(:a :b :c) '(:b :a :d))
+
+(defn occurences [l]
+    (let [elts (distinct l)]        
+        (for [elt elts]
+        [elt (count (filter #(= % elt) l))])))
+    
+(occurences [:a :b :a :a :d :c :c])
