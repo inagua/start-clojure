@@ -11,9 +11,13 @@
 
 (stable-union '(:a :b :c) '(:b :a :d))
 
-(defn occurences [l]
+(defn occurences1 [l]
     (let [elts (distinct l)]        
         (for [elt elts]
         [elt (count (filter #(= % elt) l))])))
-    
+ 
+(defn occurences [l]        
+    (for [elt (distinct l)]
+        [elt (count (filter #(= % elt) l))]))
+                   
 (occurences [:a :b :a :a :d :c :c])
