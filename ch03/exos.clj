@@ -11,6 +11,7 @@
 
 (stable-union '(:a :b :c) '(:b :a :d))
 
+; ex 3
 (defn occurences1 [l]
     (let [elts (distinct l)]        
         (for [elt elts]
@@ -22,3 +23,10 @@
         [elt (count (filter #(= % elt) l))])))
                    
 (occurences [:a :b :a :a :d :c :c :c])
+
+; ex 5
+(defn pos+ [col]
+    (map - col (range (count col))))
+(pos+ [7 6 3 7])
+
+    
