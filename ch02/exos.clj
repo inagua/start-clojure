@@ -1,4 +1,5 @@
 ; ex 8
+; count number of 'a in given list
 (defn count-a [l]
     (if (empty? l)
         0
@@ -11,6 +12,7 @@
 (count-a '(oo ll ee))
 
 ; ex 9
+; sum all elements
 (defn summit [l]
     (reduce (fn [acc x] (if x (+ acc x) acc))
         0

@@ -1,4 +1,5 @@
 ; ex 2
+; make union (no duplication of lists)
 (defn stable-union [col1 col2]
     (if (empty? col2)
         col1        
@@ -12,6 +13,7 @@
 (stable-union '(:a :b :c) '(:b :a :d))
 
 ; ex 3
+; count nb occurences in list
 (defn occurences1 [l]
     (let [elts (distinct l)]        
         (for [elt elts]
@@ -25,6 +27,7 @@
 (occurences [:a :b :a :a :d :c :c :c])
 
 ; ex 5
+; shift each element by a number that is increased by one at each step 
 (defn pos+ [col]
     (map - col (range (count col))))
 (pos+ [7 6 3 7])
